@@ -6,14 +6,18 @@
 #Imports the file with the board class.
 import BoggleBoard
 
+#Main function
 def main():
+    #Has the user enter the seed, and intilizes the board, filling and printing it.
     seed = input('Enter seed: ')
     board = BoggleBoard.BoggleBoard(seed)
     board.fill_board()
     board.print_board()
 
+    #Allows the user to enter a word.
     word = 'Enter word (in UPPERcase): '
 
+    #Checks if the word is on the board, and if it is a palindrone, prints corresponding message.
     if board.check_board():
         print('Nice Job!')
         check_palindrome(word)
@@ -25,7 +29,7 @@ def main():
             print('Are we looking at the same board?')
     
 
-
+#Palindrome function, checks if given word is a palindrome
 def is_palindrome(word):
     if len(word) <= 1:
         return True
@@ -33,10 +37,12 @@ def is_palindrome(word):
         return False
     return is_palindrome(word[1:-1])
 
+#Prints message if word is or isn't a palindrome.
 def check_palindrome(word):
     if is_palindrome(word):
             print(f'The word {word} is a palindrome.') 
     else:
         print(f'The word {word} is not a palindrome.', end = " ")
 
+#Call to the main function.
 main()
