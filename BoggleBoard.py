@@ -15,7 +15,7 @@ class BoggleBoard:
         dice = random.choice(string.ascii_uppercase)
         return dice
 
-    def fill_list(self):
+    def fill_board(self):
         for row in range(4):
             row_vals = []
             for val in range(4):
@@ -24,7 +24,7 @@ class BoggleBoard:
         return self.board
 
 
-    def print_list(self):
+    def print_board(self):
         for row in self.board:
             print(row)
 
@@ -32,7 +32,7 @@ class BoggleBoard:
         return random.seed(seed)
 
 
-    def check_word(self, word):
+    def check_board(self, word):
         # find initial position and run recursion method from there
 
         for row in range(4):
@@ -43,6 +43,7 @@ class BoggleBoard:
                         return path
 
         return False
+
 
 
 
