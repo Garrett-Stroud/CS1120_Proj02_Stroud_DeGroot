@@ -40,22 +40,20 @@ class BoggleBoard:
             print(border)
 
     def print_highlighted(self, path):
-        border = '+---+ +---+ +---+ +---+'
+        border = '+---+---+---+---+'
 
         for row in range(4):
             print(border)
             for col in range(4):
 
-                # If the letter is in path then highlight
                 if (row, col) in path:
-                    print(f'[<{self.board[row][col]}>]', end=" ")
+                    print(f'|<{self.board[row][col]}>|', end="")
                 else:
-                    print(f'| {self.board[row][col]} |', end=" ")
+                    print(f'| {self.board[row][col]} |', end="")
 
             print()
-            print(border)
 
-
+        print(border)
 
 
 
@@ -124,11 +122,3 @@ class BoggleBoard:
         # Returns False when all fails
         path.pop()
         return False
-
-
-
-
-
-
-
-
