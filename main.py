@@ -16,6 +16,7 @@ def main():
 
     #Allows the user to enter a word.
     word = 'Enter word (in UPPERcase): '
+    path = board.check_board(word)
 
     #Checks if the word is on the board, and if it is a palindrone, prints corresponding message.
     if board.check_board():
