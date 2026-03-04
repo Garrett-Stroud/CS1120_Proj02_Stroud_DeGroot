@@ -7,11 +7,15 @@ import string
 
 
 class BoggleBoard:
-    def __init__(self):
+    def __init__(self,seed = None):
         self.board = []
+        if seed is not None:
+            random.seed(seed)
+
+    def get_seed(self,seed):
+        return random.seed(seed)
 
     def create_dice(self):
-        random.seed(self.get_seed(42))
         dice = random.choice(string.ascii_uppercase)
         return dice
 
@@ -34,18 +38,31 @@ class BoggleBoard:
                 print(f'| {self.board[row][col]} |', end=" ")
             print()
             print(border)
-            
-    def print_highlighted(self):
-      
-        
-    
-   
+
+    def print_highlighted(self, path):
+        border = '+---+ +---+ +---+ +---+'
+
+        for row in range(4):
+            print(border)
+            for col in range(4):
+
+                # If the letter is in path then highlight
+                if (row, col) in path:
+                    print(f'[<{self.board[row][col]}>]', end=" ")
+                else:
+                    print(f'| {self.board[row][col]} |', end=" ")
+
+            print()
+            print(border)
 
 
 
 
-    def get_seed(self,seed):
-        return random.seed(seed)
+
+
+
+
+
 
 
     def check_board(self, word):
