@@ -25,12 +25,15 @@ class BoggleBoard:
 
 
     def print_board(self):
-        for row in self.board:
-            print(row)
 
-    def get_seed(self,seed):
-        return random.seed(seed)
+        border = '+---+ +---+ +---+ +---+'
 
+        for row in range(4):
+            print(border)
+            for col in range(4):
+                print(f'| {self.board[row][col]} |', end=" ")
+            print()
+            print(border)
 
     def check_board(self, word):
         # find initial position and run recursion method from there
@@ -91,6 +94,7 @@ class BoggleBoard:
         # Returns False when all fails
         path.pop()
         return False
+
 
 
 
