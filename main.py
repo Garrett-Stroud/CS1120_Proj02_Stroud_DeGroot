@@ -1,6 +1,7 @@
 #Project No.2#
 #Authors: Grace DeGroot and Garrett Stroud
-
+#Description: Main function that allows the user to enter a seed and word, and generates them a boggle board based on the seed.
+#The user can enter a desired word, and it is checked for correctness. It also checks for if the word is a palindrone.
 
 
 import BoggleBoard
