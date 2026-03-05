@@ -22,7 +22,7 @@ def main():
     if board.check_board(word):
         print('Nice Job!')
         check_palindrome(word)
-        board.print_highlihgted(path)
+        board.print_highlighted(path)
         
     else:
         print(f"I don't see that word.")
